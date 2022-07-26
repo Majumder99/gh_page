@@ -32,11 +32,11 @@ jobs:
     - name: Android Emulator Runner
       uses: reactivecircus/android-emulator-runner@v2
       with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
+        api-level: 23
+        target: default
+        arch: x86
         profile: Nexus 6
-        script: ./gradlew connectedCheck
+        script: ./gradlew connectedCheck --stacktrace
         
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
